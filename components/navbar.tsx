@@ -25,14 +25,14 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b-2 border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b-2 border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80 shadow-sm">
       <nav className="container-custom flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 group">
-          <div className="p-2 rounded-lg bg-gradient-to-br from-primary to-secondary group-hover:scale-110 transition-transform">
+          <div className="p-2 rounded-lg bg-linear-to-br from-primary to-secondary group-hover:scale-110 transition-transform">
             <Wheat className="h-7 w-7 text-primary-foreground" />
           </div>
-          <span className="font-heading text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <span className="font-heading text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text">
             AnnaSetu
           </span>
         </Link>

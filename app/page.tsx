@@ -65,8 +65,8 @@ export default function Home() {
             >
               Welcome to{" "}
               <span className="relative inline-block">
-                <span className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent blur-lg opacity-30" />
-                <span className="relative bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                <span className="absolute inset-0 bg-linear-to-r from-primary via-secondary to-accent blur-lg opacity-30" />
+                <span className="relative bg-linear-to-r from-primary via-secondary to-accent bg-clip-text ">
                   AnnaSetu
                 </span>
               </span>
