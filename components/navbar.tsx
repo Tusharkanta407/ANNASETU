@@ -25,27 +25,29 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b-2 border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-sm">
       <nav className="container-custom flex items-center justify-between py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <Wheat className="h-8 w-8 text-primary" />
-          <span className="font-heading text-2xl font-bold text-primary">
+        <Link href="/" className="flex items-center space-x-3 group">
+          <div className="p-2 rounded-lg bg-gradient-to-br from-primary to-secondary group-hover:scale-110 transition-transform">
+            <Wheat className="h-7 w-7 text-primary-foreground" />
+          </div>
+          <span className="font-heading text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             AnnaSetu
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:gap-x-6">
+        <div className="hidden lg:flex lg:gap-x-1">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
+                "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                 pathname === item.href
-                  ? "text-primary"
-                  : "text-muted-foreground"
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "text-foreground hover:bg-muted hover:text-primary"
               )}
             >
               {item.name}
@@ -54,12 +56,13 @@ export function Navbar() {
         </div>
 
         {/* Right Side Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {/* Theme Toggle */}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="rounded-lg hover:bg-muted"
           >
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -69,10 +72,10 @@ export function Navbar() {
           {/* Auth Buttons - Desktop */}
           <div className="hidden lg:flex lg:gap-2">
             <Link href="/auth/login">
-              <Button variant="ghost">Login</Button>
+              <Button variant="outline" className="border-2 hover:bg-primary/5">Login</Button>
             </Link>
             <Link href="/auth/signup">
-              <Button>Sign Up</Button>
+              <Button className="btn-organic">Sign Up</Button>
             </Link>
           </div>
 
@@ -80,7 +83,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="lg:hidden rounded-lg"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -94,14 +97,14 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden">
-          <div className="space-y-1 px-4 pb-3 pt-2">
+        <div className="lg:hidden border-t-2 border-border bg-background/98">
+          <div className="space-y-1 px-4 pb-4 pt-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "block rounded-md px-3 py-2 text-base font-medium",
+                  "block rounded-lg px-4 py-3 text-base font-medium transition-colors",
                   pathname === item.href
                     ? "bg-primary text-primary-foreground"
                     : "text-foreground hover:bg-muted"
@@ -111,14 +114,14 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <div className="flex gap-2 px-3 pt-4">
+            <div className="flex gap-2 px-2 pt-4">
               <Link href="/auth/login" className="flex-1">
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full border-2">
                   Login
                 </Button>
               </Link>
               <Link href="/auth/signup" className="flex-1">
-                <Button className="w-full">Sign Up</Button>
+                <Button className="w-full btn-organic">Sign Up</Button>
               </Link>
             </div>
           </div>

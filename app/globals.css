@@ -2,58 +2,60 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
-    --primary: 35 45% 35%;
-    --primary-foreground: 35 5% 98%;
-    --secondary: 82 35% 45%;
-    --secondary-foreground: 82 5% 98%;
-    --muted: 35 15% 92%;
-    --muted-foreground: 25 5.3% 44.7%;
-    --accent: 42 85% 55%;
-    --accent-foreground: 42 5% 10%;
-    --destructive: 0 84.2% 60.2%;
+    /* Agricultural color palette - warm earth tones */
+    --background: 42 40% 96%; /* Warm cream/wheat background */
+    --foreground: 25 30% 15%; /* Rich dark brown */
+    --card: 40 35% 98%; /* Light wheat card */
+    --card-foreground: 25 30% 15%;
+    --popover: 40 35% 98%;
+    --popover-foreground: 25 30% 15%;
+    --primary: 28 60% 45%; /* Rich terracotta/clay brown */
+    --primary-foreground: 40 15% 98%;
+    --secondary: 82 40% 42%; /* Natural olive/millet green */
+    --secondary-foreground: 40 15% 98%;
+    --muted: 42 30% 88%; /* Soft beige */
+    --muted-foreground: 25 20% 35%;
+    --accent: 38 92% 50%; /* Golden harvest yellow */
+    --accent-foreground: 25 30% 15%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-    --ring: 35 45% 35%;
+    --border: 38 25% 82%; /* Warm tan border */
+    --input: 38 25% 88%;
+    --ring: 28 60% 45%;
     --radius: 0.75rem;
-    --chart-1: 35 70% 50%;
-    --chart-2: 82 60% 45%;
-    --chart-3: 42 80% 55%;
-    --chart-4: 30 50% 40%;
-    --chart-5: 35 40% 60%;
+    --chart-1: 28 65% 48%;
+    --chart-2: 82 45% 42%;
+    --chart-3: 38 88% 52%;
+    --chart-4: 120 25% 35%;
+    --chart-5: 42 55% 60%;
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 82 35% 50%;
-    --primary-foreground: 82 5% 10%;
-    --secondary: 35 25% 20%;
-    --secondary-foreground: 35 5% 95%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --accent: 42 75% 50%;
-    --accent-foreground: 42 5% 95%;
-    --destructive: 0 62.8% 30.6%;
+    /* Dark agricultural theme - night farm */
+    --background: 25 35% 8%; /* Deep earth brown */
+    --foreground: 42 30% 92%;
+    --card: 28 30% 12%; /* Dark soil */
+    --card-foreground: 42 30% 92%;
+    --popover: 28 30% 10%;
+    --popover-foreground: 42 30% 92%;
+    --primary: 38 75% 55%; /* Bright golden grain */
+    --primary-foreground: 25 30% 10%;
+    --secondary: 82 35% 48%; /* Vibrant green */
+    --secondary-foreground: 25 30% 10%;
+    --muted: 25 25% 18%;
+    --muted-foreground: 42 20% 65%;
+    --accent: 38 85% 55%;
+    --accent-foreground: 25 30% 10%;
+    --destructive: 0 65% 45%;
     --destructive-foreground: 0 0% 98%;
-    --border: 24 5.7% 20%;
-    --input: 24 5.7% 20%;
-    --ring: 82 35% 50%;
-    --chart-1: 35 60% 45%;
-    --chart-2: 82 50% 40%;
-    --chart-3: 42 70% 50%;
-    --chart-4: 30 45% 35%;
-    --chart-5: 35 35% 55%;
+    --border: 25 25% 22%;
+    --input: 25 25% 20%;
+    --ring: 38 75% 55%;
+    --chart-1: 38 70% 52%;
+    --chart-2: 82 40% 45%;
+    --chart-3: 28 60% 48%;
+    --chart-4: 120 30% 35%;
+    --chart-5: 42 50% 55%;
   }
 }
 
@@ -99,8 +101,47 @@
   }
   
   .card-gradient {
-    background-image: linear-gradient(to bottom right, hsl(var(--card)), hsl(var(--card) / 0.8));
-    border: 1px solid hsl(var(--border) / 0.5);
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  .agricultural-pattern {
+    background-image: 
+      repeating-linear-gradient(45deg, transparent, transparent 35px, hsl(var(--muted) / 0.3) 35px, hsl(var(--muted) / 0.3) 70px);
+  }
+  
+  .wheat-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a574' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  .organic-texture {
+    position: relative;
+  }
+  
+  .organic-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  
+  .harvest-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)) 0%, 
+      hsl(var(--secondary)) 50%, 
+      hsl(var(--accent)) 100%);
+  }
+  
+  .earth-shadow {
+    box-shadow: 
+      0 1px 3px rgba(101, 67, 33, 0.06),
+      0 4px 12px rgba(101, 67, 33, 0.08),
+      0 8px 24px rgba(101, 67, 33, 0.04);
   }
 }
 
@@ -111,3 +152,118 @@ html {
 .grain-texture {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 }
+
+/* Agricultural Enhancement Animations */
+@keyframes gentle-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+}
+
+@keyframes grow-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes harvest-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-sway {
+  animation: gentle-sway 3s ease-in-out infinite;
+}
+
+.animate-grow {
+  animation: grow-in 0.6s ease-out;
+}
+
+/* Enhanced Card Styles */
+.agricultural-card {
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted) / 0.5) 100%);
+  border: 2px solid hsl(var(--border));
+  border-radius: calc(var(--radius) + 4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agricultural-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 24px rgba(101, 67, 33, 0.1),
+    0 4px 8px rgba(101, 67, 33, 0.06);
+  border-color: hsl(var(--primary));
+}
+
+/* Nature-inspired Borders */
+.nature-border {
+  border: 2px solid hsl(var(--border));
+  border-image: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.3),
+    hsl(var(--secondary) / 0.3),
+    hsl(var(--accent) / 0.3)
+  ) 1;
+}
+
+/* Organic Button Enhancement */
+.btn-organic {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.9));
+  box-shadow: 0 4px 14px rgba(101, 67, 33, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-organic:hover {
+  box-shadow: 0 6px 20px rgba(101, 67, 33, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-organic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-organic:hover::before {
+  left: 100%;
+}
+
+/* Wheat Grain Separator */
+.wheat-separator {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    hsl(var(--border)) 20%,
+    hsl(var(--border)) 80%,
+    transparent 100%
+  );
+  margin: 3rem 0;
+}
+
+.wheat-separator::before,
+.wheat-separator::after {
+  content: '🌾';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: hsl(var(--background));
+  padding: 0 1rem;
+}
+
+.wheat-separator::before {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
