@@ -94,7 +94,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span>Bangalore, Karnataka, India</span>
+                <span>Patia, Bhubaneswar, India</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-primary" />
@@ -117,7 +117,7 @@ export function Footer() {
           <p className="mt-2">
             Part of the{" "}
             <span className="font-semibold text-primary">Shree Anna Initiative</span>{" "}
-            | Supporting International Year of Millets 2023
+            | Supporting International Year of Millets 2025
           </p>
         </div>
       </div>

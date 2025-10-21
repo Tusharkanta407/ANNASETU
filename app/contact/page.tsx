@@ -153,8 +153,8 @@ export default function ContactPage() {
                       <h4 className="font-semibold">Address</h4>
                       <p className="text-sm text-muted-foreground">
                         AnnaSetu Headquarters<br />
-                        Koramangala, Bangalore<br />
-                        Karnataka - 560095, India
+                        Patia, Bhubaneshwar<br />
+                        Odisha - 759148, India
                       </p>
                     </div>
                   </div>

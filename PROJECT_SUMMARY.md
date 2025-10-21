@@ -231,4 +231,4 @@ Perfect for demonstrations, user testing, or investor presentations!
 
 ---
 
-**Built with ❤️ for the Shree Anna Initiative and International Year of Millets 2023**
+**Built with ❤️ for the Shree Anna Initiative and International Year of Millets 2025**

@@ -8,7 +8,7 @@ Built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion.
 
 ## 🌟 Project Overview
 
-AnnaSetu is a revolutionary digital platform designed to transform the millet and pulses value chain in India. Born from the vision of the **Shree Anna Initiative** and aligned with the **International Year of Millets 2023**, we connect farmers, Farmer Producer Organizations (FPOs), Self Help Groups (SHGs), processors, startups, and consumers in a transparent, efficient, and sustainable marketplace.
+AnnaSetu is a revolutionary digital platform designed to transform the millet and pulses value chain in India. Born from the vision of the **Shree Anna Initiative** and aligned with the **International Year of Millets 2025**, we connect farmers, Farmer Producer Organizations (FPOs), Self Help Groups (SHGs), processors, startups, and consumers in a transparent, efficient, and sustainable marketplace.
 
 ### Key Features
 
@@ -306,7 +306,7 @@ Contributions are welcome! Please follow these steps:
 
 ## 📜 License
 
-This project supports the **Shree Anna Initiative** and **International Year of Millets 2023**.
+This project supports the **Shree Anna Initiative** and **International Year of Millets 2025**.
 
 ---
 
@@ -316,14 +316,14 @@ This project supports the **Shree Anna Initiative** and **International Year of 
 
 - Email: info@annasetu.com
 - Phone: +91 123 456 7890
-- Location: Bangalore, Karnataka, India
+- Location: Patia, Bhubaneswar, India
 
 ---
 
 ## 🙏 Acknowledgments
 
 - Government of India - Shree Anna Initiative
-- International Year of Millets 2023
+- International Year of Millets 2025
 - All farmers and FPOs in the millet ecosystem
 - Open-source community
 

@@ -2,24 +2,24 @@
 
 @layer base {
   :root {
-    --background: 35 25% 97%;
-    --foreground: 30 15% 15%;
-    --card: 35 20% 98%;
-    --card-foreground: 30 15% 15%;
-    --popover: 35 20% 98%;
-    --popover-foreground: 30 15% 15%;
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
     --primary: 35 45% 35%;
     --primary-foreground: 35 5% 98%;
     --secondary: 82 35% 45%;
     --secondary-foreground: 82 5% 98%;
     --muted: 35 15% 92%;
-    --muted-foreground: 30 10% 40%;
+    --muted-foreground: 25 5.3% 44.7%;
     --accent: 42 85% 55%;
     --accent-foreground: 42 5% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
     --ring: 35 45% 35%;
     --radius: 0.75rem;
     --chart-1: 35 70% 50%;
@@ -30,24 +30,24 @@
   }
 
   .dark {
-    --background: 30 20% 8%;
-    --foreground: 35 10% 95%;
-    --card: 30 18% 10%;
-    --card-foreground: 35 10% 95%;
-    --popover: 30 18% 10%;
-    --popover-foreground: 35 10% 95%;
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
     --primary: 82 35% 50%;
     --primary-foreground: 82 5% 10%;
     --secondary: 35 25% 20%;
     --secondary-foreground: 35 5% 95%;
-    --muted: 30 15% 15%;
-    --muted-foreground: 35 10% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 24 5.4% 63.9%;
     --accent: 42 75% 50%;
     --accent-foreground: 42 5% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 15% 20%;
-    --input: 30 15% 20%;
+    --border: 24 5.7% 20%;
+    --input: 24 5.7% 20%;
     --ring: 82 35% 50%;
     --chart-1: 35 60% 45%;
     --chart-2: 82 50% 40%;
@@ -65,7 +65,13 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    font-family: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+    color: hsl(var(--foreground));
   }
 }
 

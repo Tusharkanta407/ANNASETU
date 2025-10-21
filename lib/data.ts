@@ -178,7 +178,7 @@ export const products: Product[] = [
     image: '/products/millet-cookies.jpg',
     description: 'Healthy millet-based cookies, perfect snack',
     seller: 'Healthy Bites Startup',
-    location: 'Bangalore',
+    location: 'Patia',
     rating: 4.9,
     inStock: true,
     certifications: ['FSSAI', 'ISO']
@@ -223,7 +223,7 @@ export const sampleTrace: TraceabilityRecord[] = [
   {
     stage: 'Processing',
     timestamp: '2024-11-25',
-    location: 'Bangalore, Karnataka',
+    location: 'Patia, Bhubaneswar',
     actor: 'Millet Processing Unit',
     details: 'Cleaned, graded, and packaged in food-grade material',
     verified: true
@@ -231,7 +231,7 @@ export const sampleTrace: TraceabilityRecord[] = [
   {
     stage: 'Storage',
     timestamp: '2024-11-26',
-    location: 'Bangalore Warehouse',
+    location: 'Patia Warehouse',
     actor: 'AnnaSetu Logistics',
     details: 'Stored in temperature-controlled facility',
     verified: true
@@ -283,7 +283,7 @@ export const schemes: Scheme[] = [
   },
   {
     id: '3',
-    title: 'International Year of Millets 2023 - Promotional Programs',
+    title: 'International Year of Millets 2025 - Promotional Programs',
     description: 'Special initiatives to promote millet consumption and production',
     eligibility: ['All stakeholders in millet value chain'],
     benefits: [

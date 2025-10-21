@@ -33,7 +33,7 @@ export default function AboutPage() {
               AnnaSetu is a revolutionary digital platform designed to transform the millet 
               and pulses value chain in India. Born from the vision of the{" "}
               <span className="font-semibold text-primary">Shree Anna Initiative</span> and 
-              aligned with the International Year of Millets 2023, we are on a mission to 
+              aligned with the International Year of Millets 2025, we are on a mission to 
               revitalize India's ancient grains.
             </p>
             <p>

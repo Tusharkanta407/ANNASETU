@@ -49,23 +49,23 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp} className="mb-6 flex justify-center">
               <Badge className="bg-accent text-accent-foreground text-sm px-4 py-1">
-                🌾 International Year of Millets 2023
+                🌾 International Year of Millets 2025
               </Badge>
             </motion.div>
             
             <motion.h1 
               variants={fadeInUp}
-              className="font-heading text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+              className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
             >
               Welcome to{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-secondary bg-clip-text">
                 AnnaSetu
               </span>
             </motion.h1>
             
             <motion.p 
               variants={fadeInUp}
-              className="mt-6 text-lg text-muted-foreground md:text-xl"
+              className="mt-6 text-lg text-foreground/80 md:text-xl"
             >
               Digital bridge connecting the millet ecosystem — from farm to fork.
               Empowering farmers, enabling transparency, ensuring quality.
@@ -100,10 +100,10 @@ export default function Home() {
                 { label: "States Covered", value: "15+" }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="font-heading text-3xl font-bold text-primary">
+                  <div className="font-heading text-3xl font-bold text-primary md:text-4xl">
                     {stat.value}
                   </div>
-                  <div className="mt-1 text-sm text-muted-foreground">
+                  <div className="mt-1 text-sm text-foreground/70">
                     {stat.label}
                   </div>
                 </div>
@@ -117,10 +117,10 @@ export default function Home() {
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold md:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">
               Why Choose AnnaSetu?
             </h2>
-            <p className="mt-4 text-muted-foreground md:text-lg">
+            <p className="mt-4 text-foreground/70 md:text-lg">
               Comprehensive platform designed for the entire millet value chain
             </p>
           </div>
@@ -188,10 +188,10 @@ export default function Home() {
       <section className="bg-muted/50 py-20">
         <div className="container-custom">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold md:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">
               How AnnaSetu Works
             </h2>
-            <p className="mt-4 text-muted-foreground md:text-lg">
+            <p className="mt-4 text-foreground/70 md:text-lg">
               Simple steps to connect and transact
             </p>
           </div>
@@ -236,10 +236,10 @@ export default function Home() {
                     {step.step}
                   </div>
                   <step.icon className="mx-auto mb-4 h-12 w-12 text-primary" />
-                  <h3 className="font-heading text-xl font-semibold">
+                  <h3 className="font-heading text-xl font-semibold text-foreground">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                  <p className="mt-2 text-sm text-foreground/70">
                     {step.description}
                   </p>
                 </div>
@@ -256,7 +256,7 @@ export default function Home() {
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold md:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">
               Who Benefits from AnnaSetu?
             </h2>
           </div>
@@ -334,10 +334,10 @@ export default function Home() {
       <section className="bg-muted/50 py-20">
         <div className="container-custom">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold md:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">
               Success Stories
             </h2>
-            <p className="mt-4 text-muted-foreground md:text-lg">
+            <p className="mt-4 text-foreground/70 md:text-lg">
               Hear from our community members
             </p>
           </div>
