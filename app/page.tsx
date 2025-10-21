@@ -41,9 +41,9 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section - Enhanced Agricultural Theme */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 wheat-pattern organic-texture">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(var(--accent)/0.15),_transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_hsl(var(--secondary)/0.1),_transparent_50%)]" />
+      <section className="relative overflow-hidden bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5 wheat-pattern organic-texture">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--accent)/0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,hsl(var(--secondary)/0.1),transparent_50%)]" />
         
         <div className="container-custom relative py-24 md:py-32 lg:py-40">
           <motion.div 
@@ -53,7 +53,7 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="mb-8 flex justify-center">
-              <Badge className="bg-gradient-to-r from-accent/90 to-accent text-accent-foreground text-sm px-6 py-2 shadow-lg border-2 border-accent/30">
+              <Badge className="bg-linear-to-r from-accent/90 to-accent text-accent-foreground text-sm px-6 py-2 shadow-lg border-2 border-accent/30">
                 <Wheat className="mr-2 h-4 w-4" />
                 International Year of Millets 2023
               </Badge>
@@ -119,7 +119,7 @@ export default function Home() {
                 >
                   <div className="agricultural-card p-6 text-center">
                     <stat.icon className="mx-auto h-8 w-8 mb-3 text-primary" />
-                    <div className="font-heading text-4xl font-bold bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent md:text-5xl">
+                    <div className="font-heading text-4xl font-bold bg-linear-to-br from-primary to-secondary bg-clip-text text-transparent md:text-5xl">
                       {stat.value}
                     </div>
                     <div className="mt-2 text-sm font-medium text-foreground/70">
@@ -220,7 +220,7 @@ export default function Home() {
       </section>
 
       {/* How It Works - Nature Theme */}
-      <section className="bg-gradient-to-b from-muted/30 to-muted/50 py-24 relative overflow-hidden">
+      <section className="bg-linear-to-b from-muted/30 to-muted/50 py-24 relative overflow-hidden">
         <div className="absolute inset-0 agricultural-pattern opacity-20" />
         <div className="container-custom relative">
           <div className="text-center mb-16">
@@ -271,11 +271,11 @@ export default function Home() {
                 <div className="text-center relative">
                   {/* Connecting Line */}
                   {i < 3 && (
-                    <div className="absolute left-[60%] top-10 hidden md:block w-[80%] h-0.5 bg-gradient-to-r from-primary/40 to-secondary/40" />
+                    <div className="absolute left-[60%] top-10 hidden md:block w-[80%] h-0.5 bg-linear-to-r from-primary/40 to-secondary/40" />
                   )}
                   
                   <div className="agricultural-card p-8 relative z-10">
-                    <div className="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-3xl font-bold text-primary-foreground shadow-lg">
+                    <div className="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-linear-to-br from-primary to-secondary text-3xl font-bold text-primary-foreground shadow-lg">
                       {step.step}
                     </div>
                     <step.icon className="mx-auto mb-4 h-12 w-12 text-primary" />
@@ -344,7 +344,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <Card className="h-full agricultural-card border-2 overflow-hidden">
-                  <div className={`h-2 bg-gradient-to-r ${beneficiary.gradient}`} />
+                  <div className={`h-2 bg-linear-to-r ${beneficiary.gradient}`} />
                   <CardHeader className="pb-4">
                     <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 border-2 border-primary/20">
                       <beneficiary.icon className="h-8 w-8 text-primary" />
@@ -358,7 +358,7 @@ export default function Home() {
                     <ul className="space-y-3">
                       {beneficiary.benefits.map((benefit, j) => (
                         <li key={j} className="flex items-start gap-3">
-                          <CheckCircle className="mt-0.5 h-5 w-5 text-primary flex-shrink-0" />
+                          <CheckCircle className="mt-0.5 h-5 w-5 text-primary shrink-0" />
                           <span className="text-base">{benefit}</span>
                         </li>
                       ))}
@@ -378,7 +378,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials - Warm Background */}
-      <section className="bg-gradient-to-b from-muted/30 to-muted/50 py-24">
+      <section className="bg-linear-to-b from-muted/30 to-muted/50 py-24">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
@@ -401,7 +401,7 @@ export default function Home() {
                 <Card className="h-full agricultural-card border-2">
                   <CardHeader>
                     <div className="flex items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary font-heading text-2xl font-bold text-primary-foreground">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-primary to-secondary font-heading text-2xl font-bold text-primary-foreground">
                         {testimonial.name.charAt(0)}
                       </div>
                       <div>
