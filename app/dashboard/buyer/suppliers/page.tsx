@@ -475,7 +475,7 @@ export default function SuppliersPage() {
 
                     {/* Supply Chain Timeline */}
                     <div className="space-y-3">
-                      {viewDetailsProduct.supplyChain.map((stage, index) => (
+                      {viewDetailsProduct.supplyChain?.map((stage, index) => (
                         <div key={index} className="flex gap-4">
                           {/* Timeline Indicator */}
                           <div className="flex flex-col items-center">
@@ -484,9 +484,9 @@ export default function SuppliersPage() {
                               stage.status === 'Completed' || stage.status === 'Verified' || stage.status === 'Certified' ? 'bg-blue-500' :
                               'bg-gray-400'
                             } text-white font-bold text-sm`}>
-                              {index === viewDetailsProduct.supplyChain.length - 1 ? '📍' : '✓'}
+                              {index === (viewDetailsProduct.supplyChain?.length ?? 0) - 1 ? '📍' : '✓'}
                             </div>
-                            {index < viewDetailsProduct.supplyChain.length - 1 && (
+                            {index < (viewDetailsProduct.supplyChain?.length ?? 0) - 1 && (
                               <div className="w-0.5 h-full bg-blue-300 mt-1" />
                             )}
                           </div>
