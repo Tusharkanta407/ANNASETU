@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
@@ -8,18 +8,45 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { 
   CheckCircle, Package, Truck, Clock, 
-  Home, FileText
+  Home, FileText, Loader2
 } from "lucide-react"
-import { getCurrentUser } from "@/lib/auth"
+import { getCurrentUser, type User } from "@/lib/auth"
 import Link from "next/link"
 import confetti from 'canvas-confetti'
 
-export default function OrderSuccessPage() {
+interface Order {
+  id: string
+  items: Array<{
+    id: string
+    name: string
+    image: string
+    price: number
+    quantity: number
+  }>
+  total: number
+  deliveryAddress: string
+  estimatedDelivery: string
+  expectedDelivery: string
+  status: string
+  createdAt: string
+  shipping: {
+    name: string
+    address: string
+    city: string
+    state: string
+    pincode: string
+    phone: string
+  }
+  paymentMethod: string
+  deliveryDays: number
+}
+
+function OrderSuccessContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const orderId = searchParams.get('orderId')
-  const [user, setUser] = useState<any>(null)
-  const [order, setOrder] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
+  const [order, setOrder] = useState<Order | null>(null)
 
   useEffect(() => {
     const currentUser = getCurrentUser()
@@ -32,7 +59,7 @@ export default function OrderSuccessPage() {
     // Load order from localStorage
     if (orderId) {
       const orders = JSON.parse(localStorage.getItem(`orders_${currentUser.id}`) || '[]')
-      const foundOrder = orders.find((o: any) => o.id === orderId)
+      const foundOrder = orders.find((o: Order) => o.id === orderId)
       if (foundOrder) {
         setOrder(foundOrder)
         
@@ -208,6 +235,23 @@ export default function OrderSuccessPage() {
         </motion.div>
       </main>
     </div>
+  )
+}
+
+export default function OrderSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 wheat-pattern flex items-center justify-center">
+        <Card className="agricultural-card p-8">
+          <div className="flex flex-col items-center gap-4">
+            <Loader2 className="h-12 w-12 text-primary animate-spin" />
+            <p className="text-lg font-semibold">Loading your order...</p>
+          </div>
+        </Card>
+      </div>
+    }>
+      <OrderSuccessContent />
+    </Suspense>
   )
 }
 

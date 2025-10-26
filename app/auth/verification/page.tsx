@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -11,14 +11,15 @@ import {
   Clock, ShieldCheck, Mail, ArrowRight 
 } from "lucide-react"
 import { getUserById, getDashboardRoute } from "@/lib/auth"
+import type { User } from "@/lib/auth"
 
-export default function VerificationPage() {
+function VerificationContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const userId = searchParams.get('userId')
   
   const [status, setStatus] = useState<'pending' | 'approved' | 'rejected'>('pending')
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [countdown, setCountdown] = useState(2)
 
   useEffect(() => {
@@ -242,6 +243,38 @@ export default function VerificationPage() {
         </p>
       </div>
     </div>
+  )
+}
+
+export default function VerificationPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 wheat-pattern px-4 py-12 flex items-center justify-center">
+        <div className="mx-auto max-w-md w-full">
+          <div className="mb-8 text-center">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <Wheat className="h-10 w-10 text-primary" />
+              <span className="font-heading text-3xl font-bold text-primary">
+                AnnaSetu
+              </span>
+            </Link>
+          </div>
+          <Card className="agricultural-card border-2">
+            <CardHeader className="text-center pb-4">
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-accent/10">
+                <Loader2 className="h-10 w-10 text-accent animate-spin" />
+              </div>
+              <CardTitle className="text-2xl">Loading...</CardTitle>
+              <CardDescription>
+                Please wait while we load your verification status
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </div>
+      </div>
+    }>
+      <VerificationContent />
+    </Suspense>
   )
 }
 
