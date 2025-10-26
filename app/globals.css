@@ -143,6 +143,16 @@
       0 4px 12px rgba(101, 67, 33, 0.08),
       0 8px 24px rgba(101, 67, 33, 0.04);
   }
+  
+  /* Hide scrollbar for horizontal scroll sections */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
 }
 
 html {
