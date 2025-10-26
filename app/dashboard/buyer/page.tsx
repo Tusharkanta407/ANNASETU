@@ -8,17 +8,17 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { 
-  ShoppingCart, Package, TrendingUp, 
-  Users, Heart, Settings, LogOut, CheckCircle
+  ShoppingCart, Package, 
+  Users, Heart, LogOut, CheckCircle
 } from "lucide-react"
-import { getCurrentUser, logout } from "@/lib/auth"
-import { initializeDemoFarmerProducts, getAllFarmerProducts } from "@/lib/farmer-products"
+import { getCurrentUser, logout, type User } from "@/lib/auth"
+import { initializeDemoFarmerProducts, getAllFarmerProducts, type FarmerProduct } from "@/lib/farmer-products"
 import Link from "next/link"
 
 export default function BuyerDashboard() {
   const router = useRouter()
-  const [user, setUser] = useState<any>(null)
-  const [farmerProducts, setFarmerProducts] = useState<any[]>([])
+  const [user, setUser] = useState<User | null>(null)
+  const [farmerProducts, setFarmerProducts] = useState<FarmerProduct[]>([])
 
   useEffect(() => {
     const currentUser = getCurrentUser()
@@ -253,13 +253,13 @@ export default function BuyerDashboard() {
                   <Package className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
                   <h3 className="font-semibold mb-2">No Products Yet</h3>
                   <p className="text-sm text-muted-foreground">
-                    Farmers haven't listed any products yet. Check back soon!
+                    Farmers haven&apos;t listed any products yet. Check back soon!
                   </p>
                 </CardContent>
               </Card>
             ) : (
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {farmerProducts.slice(0, 3).map((product: any) => (
+                {farmerProducts.slice(0, 3).map((product) => (
                   <Card key={product.id} className="agricultural-card border-2 hover:border-primary/50 transition-all">
                     {product.imageUrl && (
                       <div className="relative h-48 overflow-hidden">
