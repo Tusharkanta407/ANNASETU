@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Poppins, Noto_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { ConditionalLayout } from "@/components/conditional-layout";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -48,9 +47,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            <ConditionalLayout>{children}</ConditionalLayout>
           </div>
         </ThemeProvider>
       </body>

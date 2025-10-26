@@ -2,10 +2,11 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Moon, Sun, Wheat } from "lucide-react"
+import { Menu, X, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 const navigation = [
@@ -29,8 +30,14 @@ export function Navbar() {
       <nav className="container-custom flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 group">
-          <div className="p-2 rounded-lg bg-linear-to-br from-primary to-secondary group-hover:scale-110 transition-transform">
-            <Wheat className="h-7 w-7 text-primary-foreground" />
+          <div className="relative w-12 h-12 group-hover:scale-110 transition-transform">
+            <Image
+              src="/logo.png"
+              alt="AnnaSetu Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <span className="font-heading text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text">
             AnnaSetu
